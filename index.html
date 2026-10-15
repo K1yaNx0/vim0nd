@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c9152d">
+  <title>ویموند | Vimond Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topline"></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="ویموند">
+      <img src="logo.jpeg" alt="لوگوی آکادمی ویموند">
+      <span><strong>ویموند</strong><small>VIMOND ACADEMY</small></span>
+    </a>
+    <nav class="nav-links" aria-label="ناوبری">
+      <span class="nav-pill active" id="navStep">مرحله ۱ از ۳</span>
+      <span class="nav-caption">فرم بازخورد ارائه</span>
+    </nav>
+    <div class="header-mark"><span class="live-dot"></span> ثبت نظر</div>
+  </header>
+
+  <main class="main-wrap">
+    <section class="welcome-screen" id="welcomeScreen">
+      <div class="welcome-orbit orbit-one"></div><div class="welcome-orbit orbit-two"></div>
+      <div class="welcome-content">
+        <span class="eyebrow"><span class="tiny-star">✦</span> VIMOND ACADEMY</span>
+        <h1>خوش آمدید<span class="red-dot">.</span></h1>
+        <p>از اینکه در این ارائه همراه ما هستید، خوشحالیم.</p>
+        <div class="welcome-line"><span></span><small>در حال آماده‌سازی تجربه شما</small><span></span></div>
+      </div>
+      <div class="welcome-bottom"><span>VIMOND</span><span>ارائه‌ای برای یادگیری بهتر</span></div>
+    </section>
+
+    <section class="step-panel hidden" id="step1">
+      <div class="section-kicker"><span>01</span><span>بازخورد شما</span></div>
+      <div class="section-heading">
+        <div><h2>نظرتون رو با ما در میون بذارید</h2><p>چه چیزی در این ارائه براتون جالب بود؟ هر نظری می‌تونه کمک‌کننده باشه.</p></div>
+        <div class="heading-icon">✎</div>
+      </div>
+      <form id="feedbackForm">
+        <label class="field-label" for="feedback">نظر شما درباره ارائه</label>
+        <textarea id="feedback" maxlength="800" placeholder="اینجا بنویسید..." required></textarea>
+        <div class="field-foot"><span>نظر شما برای بهتر شدن ارائه‌هاست.</span><span id="charCount">۰ / ۸۰۰</span></div>
+        <div class="step-actions"><span class="step-hint" id="stepHint">برای ادامه، این بخش رو کامل کنید.</span><button class="primary-btn" type="submit">ثبت نظر و ادامه <span>←</span></button></div>
+      </form>
+    </section>
+
+    <section class="step-panel hidden" id="step2">
+      <div class="section-kicker"><span>02</span><span>امتیازدهی</span></div>
+      <div class="section-heading">
+        <div><h2>به این ارائه چه نمره‌ای می‌دید؟</h2><p>با انتخاب ستاره‌ها، میزان رضایتتون رو مشخص کنید.</p></div>
+        <div class="heading-icon star-icon">★</div>
+      </div>
+      <div class="rating-card">
+        <div class="stars" id="stars" role="radiogroup" aria-label="امتیاز از یک تا پنج">
+          <button type="button" class="star" data-rating="1" aria-label="۱ ستاره">★</button>
+          <button type="button" class="star" data-rating="2" aria-label="۲ ستاره">★</button>
+          <button type="button" class="star" data-rating="3" aria-label="۳ ستاره">★</button>
+          <button type="button" class="star" data-rating="4" aria-label="۴ ستاره">★</button>
+          <button type="button" class="star" data-rating="5" aria-label="۵ ستاره">★</button>
+        </div>
+        <div class="rating-number" id="ratingNumber">— <small>از ۵</small></div>
+        <p id="ratingText">برای امتیاز دادن، یک ستاره انتخاب کنید.</p>
+      </div>
+      <div class="step-actions"><span class="step-hint" id="ratingHint">اول امتیازت رو انتخاب کن.</span><button class="primary-btn" id="toGame" disabled>رفتن به بازی <span>←</span></button></div>
+    </section>
+
+    <section class="step-panel hidden" id="step3">
+      <div class="section-kicker"><span>03</span><span>مرحله پایانی</span></div>
+      <div class="section-heading">
+        <div><h2>یک بازی کوتاه برای ثبت نهایی 🎮</h2><p>سیب‌ها رو جمع کن و رکوردت رو بساز؛ برای ثبت نهایی بازخورد، حداقل ۵ امتیاز بگیر.</p></div>
+        <div class="heading-icon game-icon">⌁</div>
+      </div>
+      <div class="game-shell">
+        <div class="game-toolbar"><div class="score-box"><span>امتیاز</span><strong id="score">۰</strong></div><div class="game-status" id="gameStatus">آماده‌ای؟</div><button id="soundToggle" class="sound-btn" type="button" aria-pressed="true" title="روشن/خاموش کردن صدا">♫ صدا روشن</button></div>
+        <canvas id="gameCanvas" width="600" height="360" aria-label="بازی مار"></canvas>
+        <div class="game-under">
+          <p><span class="keycap">↑</span><span class="keycap">↓</span><span class="keycap">←</span><span class="keycap">→</span> با کلیدها حرکت کن؛ روی موبایل از دکمه‌ها استفاده کن.</p>
+          <button id="startGame" class="primary-btn" type="button">شروع بازی <span>▶</span></button>
+        </div>
+        <div class="mobile-controls" aria-label="کنترل‌های موبایل">
+          <button data-dir="up" aria-label="بالا">↑</button><div><button data-dir="right" aria-label="راست">→</button><button data-dir="down" aria-label="پایین">↓</button><button data-dir="left" aria-label="چپ">←</button></div>
+        </div>
+      </div>
+      <div class="step-actions game-actions"><span class="step-hint" id="gameHint">بازی رو شروع کن و ۵ سیب جمع کن.</span><button class="primary-btn" id="finishBtn" disabled>ثبت نهایی بازخورد <span>✓</span></button></div>
+    </section>
+
+    <section class="step-panel hidden" id="stepDone">
+      <div class="done-mark">✓</div><span class="eyebrow">VIMOND ACADEMY</span>
+      <h2>ممنون از همراهی شما!</h2><p class="done-desc">بازخوردتون ثبت شد و به بهتر شدن ارائه‌های بعدی کمک می‌کنه.</p>
+      <div class="summary-card"><div><span>امتیاز ارائه</span><strong id="finalRating">—</strong></div><div><span>امتیاز بازی</span><strong id="finalScore">—</strong></div></div>
+      <button class="secondary-btn" id="restartBtn">شروع دوباره</button>
+    </section>
+    <div class="progress-track"><span id="progressBar"></span></div>
+    <div class="progress-caption"><span id="progressText">شروع تجربه ویموند</span><span id="progressPercent">۰٪</span></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand"><span class="footer-symbol">V</span><div><strong>ویموند | Vimond</strong><small>یادگیری، حرکت، پیشرفت</small></div></div>
+    <div class="footer-center"><span>سازنده</span><strong>رایان هادی‌نژاد</strong></div>
+    <a class="support-link" href="https://t.me/Nikolateslam" target="_blank" rel="noopener noreferrer"><span class="support-icon">↗</span><span><small>پشتیبانی</small><strong>@Nikolateslam</strong></span></a>
+  </footer>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
